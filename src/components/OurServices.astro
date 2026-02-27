@@ -33,26 +33,24 @@ const benefits = [
   { text: "Innovación y agilidad", icon: "lucide:zap" },
 ];
 ---
-
-<section class="relative overflow-hidden bg-rose-50 text-red-300 py-7">
-  <!-- Fondo decorativo -->
-  <div class="absolute top-0 left-1/2 -z-10 h-150 w-250 -translate-x-1/2 opacity-30 mask-[radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-32">
-    <svg viewBox="0 0 1108 632" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-rose-200">
-      <path d="M0.5 127.5C0.5 57.0863 57.5863 0 128 0H980C1050.41 0 1107.5 57.0863 1107.5 127.5V504.5C1107.5 574.914 1050.41 632 980 632H128C57.5863 632 0.5 574.914 0.5 504.5V127.5Z" />
-    </svg>
+<section class="relative overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-black text-slate-200 py-24">
+  <!-- Glow decorativo -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-[-20%] left-1/2 h-160 w-160 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]"></div>
+    <div class="absolute bottom-[-20%] right-[-10%] h-120 w-120 rounded-full bg-cyan-400/10 blur-[120px]"></div>
   </div>
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    
+
     <!-- Header -->
     <header class="mx-auto max-w-2xl text-center mb-20">
-      <h2 class="text-base font-semibold leading-7 text-red-500 uppercase tracking-wider">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-cyan-400">
         Qué ofrecemos
       </h2>
-      <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+      <p class="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">
         {header.title}
       </p>
-      <p class="mt-6 text-lg leading-8 text-gray-600">
+      <p class="mt-6 text-lg leading-8 text-slate-400">
         {header.subtitle}
       </p>
     </header>
@@ -61,23 +59,23 @@ const benefits = [
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {services.map((s) => (
         <div class="relative group">
-          <div class="absolute -inset-px rounded-3xl bg-linear-to-b from-red-200/60 to-transparent opacity-60 transition duration-300 group-hover:opacity-100"></div>
+          <div class="absolute -inset-px rounded-3xl bg-linear-to-b from-white/10 to-transparent opacity-0 transition group-hover:opacity-100"></div>
 
-          <article class="relative flex flex-col h-full rounded-4xl bg-white/90 backdrop-blur p-10 shadow-sm ring-1 ring-red-100 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+          <article class="relative flex h-full flex-col rounded-3xl bg-slate-900/70 backdrop-blur-xl p-10 ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:ring-cyan-400/40">
             
             <div class={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br ${s.color} text-white shadow-lg`}>
               <Icon name={s.icon} class="size-8" />
             </div>
 
-            <h3 class="text-xl font-bold text-gray-900 group-hover:text-red-500 transition-colors">
+            <h3 class="text-xl font-semibold text-white transition-colors group-hover:text-cyan-400">
               {s.title}
             </h3>
             
-            <p class="mt-4 flex-auto text-base leading-7 text-gray-600">
+            <p class="mt-4 flex-auto text-base leading-7 text-slate-400">
               {s.desc}
             </p>
 
-            <div class="mt-8 flex items-center text-sm font-semibold text-red-500">
+            <div class="mt-8 flex items-center text-sm font-semibold text-cyan-400">
               Saber más
               <Icon name="lucide:arrow-right" class="ml-2 size-4 transition-transform group-hover:translate-x-1" />
             </div>
@@ -87,23 +85,23 @@ const benefits = [
     </div>
 
     <!-- Beneficios -->
-    <div class="mt-12 rounded-[3rem] bg-slate-950 p-8 md:p-16 relative overflow-hidden ring-1 ring-red-500/20">
-      <div class="absolute -top-24 -right-24 h-64 w-64 bg-red-500/20 blur-[100px]"></div>
-      
-      <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+    <div class="mt-20 rounded-[3rem] bg-linear-to-br from-slate-900 to-slate-950 p-10 md:p-16 ring-1 ring-white/10 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 h-72 w-72 bg-cyan-400/10 blur-[120px]"></div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-14">
         <div class="max-w-md text-center lg:text-left">
           <h3 class="text-3xl font-bold text-white">
             ¿Por qué confiar en nosotros?
           </h3>
           <p class="mt-4 text-slate-400">
-            Transformamos ideas complejas en productos digitales simples y potentes.
+            Convertimos complejidad técnica en soluciones claras, escalables y seguras.
           </p>
         </div>
 
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {benefits.map((b) => (
             <div class="flex flex-col items-center lg:items-start gap-3 p-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-red-400 border border-white/10">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-cyan-400 ring-1 ring-white/10">
                 <Icon name={b.icon} class="size-5" />
               </div>
               <p class="text-sm font-medium text-white text-center lg:text-left">

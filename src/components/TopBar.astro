@@ -9,33 +9,44 @@ const links = [
 ];
 ---
 
-<nav class="w-full border-b border-white/10 bg-linear-to-r from-blue-700 via-blue-600 to-sky-500 shadow-md">
+<nav class="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-black backdrop-blur">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-    
-    <a href="/" class="text-3xl font-extrabold tracking-tight text-white italic">
-      BSM<span class="text-red-300 not-italic">TechSolutions</span>
+
+    <!-- Logo -->
+    <a
+      href="/"
+      class="text-2xl font-extrabold tracking-tight text-white"
+    >
+      BSM
+      <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        TechSolutions
+      </span>
     </a>
 
+    <!-- Links -->
     <ul class="hidden items-center gap-8 md:flex">
-      {links.map(link => (
+      {links.map((link) => (
         <li>
           <a
             href={link.href}
-            class="text-xl font-semibold text-white/90 transition-all hover:scale-105 hover:text-red-300"
+            class="relative text-base font-medium text-slate-300 transition-colors hover:text-white"
           >
             {link.name}
+            <span class="absolute -bottom-1 left-0 h-[2px] w-0 bg-cyan-400 transition-all duration-300 hover:w-full"></span>
           </a>
         </li>
       ))}
     </ul>
 
+    <!-- CTA -->
     <div class="flex items-center gap-4">
       <a
         href="/contacto"
-        class="hidden rounded-xl bg-white px-6 py-2.5 text-base font-bold text-blue-700 shadow-lg transition-all hover:bg-sky-50 hover:shadow-xl active:scale-95 md:inline-block"
+        class="hidden rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:shadow-cyan-500/40 active:scale-95 md:inline-block"
       >
         Ingresar
       </a>
     </div>
+
   </div>
 </nav>
