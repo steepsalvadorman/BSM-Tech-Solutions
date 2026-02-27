@@ -1,0 +1,119 @@
+---
+import { Icon } from "astro-icon/components";
+
+const header = {
+  title: "Nuestros Servicios",
+  subtitle: "Soluciones tecnológicas diseñadas para escalar tu negocio al siguiente nivel.",
+};
+
+const services = [
+  {
+    title: "Desarrollo Web",
+    desc: "Sitios de alto rendimiento con arquitecturas modernas como Astro y Next.js.",
+    icon: "lucide:monitor",
+    color: "from-blue-500 to-cyan-400",
+  },
+  {
+    title: "Aplicaciones Móviles",
+    desc: "Experiencias fluidas en iOS y Android con Flutter y React Native.",
+    icon: "lucide:smartphone",
+    color: "from-purple-600 to-pink-500",
+  },
+  {
+    title: "Software a Medida",
+    desc: "Sistemas robustos que eliminan cuellos de botella y automatizan tu éxito.",
+    icon: "lucide:cpu",
+    color: "from-emerald-500 to-teal-400",
+  },
+];
+
+const benefits = [
+  { text: "Experiencia comprobada", icon: "lucide:check-circle" },
+  { text: "Calidad y seguridad", icon: "lucide:shield-check" },
+  { text: "Innovación y agilidad", icon: "lucide:zap" },
+];
+---
+
+<section class="relative overflow-hidden bg-rose-50 text-red-300 py-7">
+  <!-- Fondo decorativo -->
+  <div class="absolute top-0 left-1/2 -z-10 h-150 w-250 -translate-x-1/2 opacity-30 mask-[radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-32">
+    <svg viewBox="0 0 1108 632" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-rose-200">
+      <path d="M0.5 127.5C0.5 57.0863 57.5863 0 128 0H980C1050.41 0 1107.5 57.0863 1107.5 127.5V504.5C1107.5 574.914 1050.41 632 980 632H128C57.5863 632 0.5 574.914 0.5 504.5V127.5Z" />
+    </svg>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    
+    <!-- Header -->
+    <header class="mx-auto max-w-2xl text-center mb-20">
+      <h2 class="text-base font-semibold leading-7 text-red-500 uppercase tracking-wider">
+        Qué ofrecemos
+      </h2>
+      <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        {header.title}
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        {header.subtitle}
+      </p>
+    </header>
+
+    <!-- Servicios -->
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((s) => (
+        <div class="relative group">
+          <div class="absolute -inset-px rounded-3xl bg-linear-to-b from-red-200/60 to-transparent opacity-60 transition duration-300 group-hover:opacity-100"></div>
+
+          <article class="relative flex flex-col h-full rounded-4xl bg-white/90 backdrop-blur p-10 shadow-sm ring-1 ring-red-100 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+            
+            <div class={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br ${s.color} text-white shadow-lg`}>
+              <Icon name={s.icon} class="size-8" />
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-red-500 transition-colors">
+              {s.title}
+            </h3>
+            
+            <p class="mt-4 flex-auto text-base leading-7 text-gray-600">
+              {s.desc}
+            </p>
+
+            <div class="mt-8 flex items-center text-sm font-semibold text-red-500">
+              Saber más
+              <Icon name="lucide:arrow-right" class="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+            </div>
+          </article>
+        </div>
+      ))}
+    </div>
+
+    <!-- Beneficios -->
+    <div class="mt-12 rounded-[3rem] bg-slate-950 p-8 md:p-16 relative overflow-hidden ring-1 ring-red-500/20">
+      <div class="absolute -top-24 -right-24 h-64 w-64 bg-red-500/20 blur-[100px]"></div>
+      
+      <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="max-w-md text-center lg:text-left">
+          <h3 class="text-3xl font-bold text-white">
+            ¿Por qué confiar en nosotros?
+          </h3>
+          <p class="mt-4 text-slate-400">
+            Transformamos ideas complejas en productos digitales simples y potentes.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {benefits.map((b) => (
+            <div class="flex flex-col items-center lg:items-start gap-3 p-4">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-red-400 border border-white/10">
+                <Icon name={b.icon} class="size-5" />
+              </div>
+              <p class="text-sm font-medium text-white text-center lg:text-left">
+                {b.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

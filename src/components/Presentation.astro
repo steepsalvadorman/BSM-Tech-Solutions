@@ -1,0 +1,41 @@
+---
+import "../styles/global.css";
+import presentacion from "../assets/propiedad-intelectual-software.jpg";
+
+const textos = [
+  { title: "Soluciones Innovadoras en Desarrollo de Software" },
+  { txtSubtitle: "Transformamos tus ideas en aplicaciones digitales a medida" },
+  { txtBoton: "HABLEMOS", href: "/hablemos" },
+];
+---
+
+<section class="relative min-h-[40vh] overflow-hidden">
+  <!-- Imagen de fondo -->
+  <img
+    src={presentacion.src}
+    alt="Presentación de la empresa"
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-linear-to-r from-blue-900/80 via-blue-700/70 to-sky-500/60"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-20 text-center text-white">
+    <h1 class="mb-6 max-w-4xl text-4xl font-extrabold md:text-5xl lg:text-6xl">
+      {textos[0].title}
+    </h1>
+
+    <p class="mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
+      {textos[1].txtSubtitle}
+    </p>
+
+    <a
+      href={textos[2].href}
+      class="rounded-xl bg-white px-8 py-3 font-semibold text-blue-700 transition hover:scale-105 hover:bg-sky-100"
+    >
+      {textos[2].txtBoton}
+    </a>
+  </div>
+</section>
