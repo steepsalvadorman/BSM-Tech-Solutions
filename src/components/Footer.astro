@@ -1,0 +1,82 @@
+---
+import "../styles/global.css";
+---
+
+<footer class="relative bg-linear-to-br from-slate-950 via-slate-900 to-black text-slate-400">
+  <!-- Separador superior -->
+  <div class="h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
+
+  <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-4">
+
+      <!-- Marca -->
+      <div class="md:col-span-2">
+        <a href="/" class="text-2xl font-extrabold tracking-tight text-white">
+          BSM
+          <span class="bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            TechSolutions
+          </span>
+        </a>
+
+        <p class="mt-6 max-w-md text-sm leading-6 text-slate-400">
+          Desarrollamos soluciones de software escalables, seguras y alineadas
+          con los objetivos reales de tu negocio.
+        </p>
+      </div>
+
+      <!-- Navegación -->
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-widest text-white">
+          Navegación
+        </h4>
+        <ul class="mt-6 space-y-4 text-sm">
+          <li><a href="/" class="hover:text-white">Inicio</a></li>
+          <li><a href="/servicios" class="hover:text-white">Servicios</a></li>
+          <li><a href="/proyectos" class="hover:text-white">Proyectos</a></li>
+          <li><a href="/contacto" class="hover:text-white">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-widest text-white">
+          Contacto
+        </h4>
+        <ul class="mt-6 space-y-4 text-sm">
+          <li>
+            <a href="mailto:steepsalvador@bsmtechsolutions.com" class="hover:text-white">
+              steepsalvador@bsmtechsolutions.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+51941435268" class="hover:text-white">
+              +51 941 435 268
+            </a>
+          </li>
+          <li class="text-slate-500">
+            Lima, Perú
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
+      <p class="text-xs text-slate-500">
+        © {new Date().getFullYear()} BSM TechSolutions. Todos los derechos reservados.
+      </p>
+
+      <div class="flex items-center gap-6 text-xs">
+        <a href="/privacidad" class="hover:text-white">
+          Privacidad
+        </a>
+        <a href="/terminos" class="hover:text-white">
+          Términos
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
