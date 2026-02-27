@@ -19,11 +19,11 @@ const textos = [
   />
 
   <!-- Overlay oscuro con degradado -->
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/80 to-black/70"></div>
+  <div class="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-900/80 to-black/70"></div>
 
   <!-- Glow sutil -->
   <div class="absolute inset-0">
-    <div class="absolute top-1/2 left-1/2 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[140px]"></div>
+    <div class="absolute top-1/2 left-1/2 h-128 w-lg -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[140px]"></div>
   </div>
 
   <!-- Contenido -->
@@ -38,7 +38,7 @@ const textos = [
 
     <a
       href={textos[2].href}
-      class="rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30 transition-all hover:shadow-cyan-500/50 active:scale-95"
+      class="rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30 transition-all hover:shadow-cyan-500/50 active:scale-95"
     >
       {textos[2].txtBoton}
     </a>
