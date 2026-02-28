@@ -2,51 +2,64 @@
 import { Icon } from "astro-icon/components";
 
 const header = {
-  title: "Nuestros Servicios",
+  title: "Mis Servicios",
   subtitle: "Soluciones tecnológicas diseñadas para escalar tu negocio al siguiente nivel.",
 };
 
+const benefits = [
+  {
+    text: "Bachiller en Ingeniería de Sistemas con enfoque en procesos industriales.",
+    icon: "lucide:graduation-cap",
+    color: "text-blue-400", // Color pertinente a educación 
+  },
+  {
+    text: "Especialista en Automatización RPA y soluciones Low-Code (Power Platform).",
+    icon: "lucide:bot",
+    color: "text-emerald-400", // Color pertinente a automatización [cite: 16, 41]
+  },
+  {
+    text: "Desarrollador Fullstack con dominio en Java, Kotlin y ecosistemas Cloud.",
+    icon: "lucide:layers",
+    color: "text-purple-400", // Color pertinente a desarrollo [cite: 31, 39, 49]
+  },
+];
+
 const services = [
   {
-    title: "Desarrollo Web",
-    desc: "Sitios de alto rendimiento con arquitecturas modernas como Astro y Next.js.",
-    icon: "lucide:monitor",
-    color: "from-blue-500 to-cyan-400",
+    title: "Desarrollo Backend",
+    desc: "Sistemas robustos y escalables utilizando Java con Spring Boot y arquitecturas de microservicios.",
+    icon: "lucide:database",
+    color: "from-blue-500 to-cyan-400", // Basado en [cite: 32, 39]
   },
   {
     title: "Aplicaciones Móviles",
-    desc: "Experiencias fluidas en iOS y Android con Flutter y React Native.",
+    desc: "Desarrollo nativo en Android con Kotlin y Jetpack Compose, enfocado en alto rendimiento.",
     icon: "lucide:smartphone",
-    color: "from-purple-600 to-pink-500",
+    color: "from-purple-600 to-pink-500", // Basado en [cite: 26]
   },
   {
-    title: "Software a Medida",
-    desc: "Sistemas robustos que eliminan cuellos de botella y automatizan tu éxito.",
-    icon: "lucide:cpu",
-    color: "from-emerald-500 to-teal-400",
+    title: "Automatización & RPA",
+    desc: "Optimización de procesos mediante Power Apps y Power Automate para eliminar cuellos de botella.",
+    icon: "lucide:workflow",
+    color: "from-emerald-500 to-teal-400", // Basado en [cite: 16, 21]
   },
-];
-
-const benefits = [
-  { text: "Experiencia comprobada", icon: "lucide:check-circle" },
-  { text: "Calidad y seguridad", icon: "lucide:shield-check" },
-  { text: "Innovación y agilidad", icon: "lucide:zap" },
 ];
 ---
 
-<section class="relative overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-black text-slate-200 py-24">
-  <!-- Glow decorativo -->
+<section
+  id="our-services"
+  class="relative overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-black text-slate-200 py-24"
+>
   <div class="absolute inset-0 -z-10">
-    <div class="absolute top-[-20%] left-1/2 h-160 w-160 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]"></div>
-    <div class="absolute bottom-[-20%] right-[-10%] h-120 w-120 rounded-full bg-cyan-400/10 blur-[120px]"></div>
+    <div class="absolute top-[-20%] left-1/2 h-160 w-160 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[120px]" />
+    <div class="absolute bottom-[-20%] right-[-10%] h-120 w-120 rounded-full bg-blue-500/10 blur-[120px]" />
   </div>
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
-    <!-- Header -->
     <header class="mx-auto max-w-2xl text-center mb-20">
       <h2 class="text-sm font-semibold uppercase tracking-widest text-cyan-400">
-        Qué ofrecemos
+        Qué ofrezco
       </h2>
       <p class="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">
         {header.title}
@@ -56,63 +69,66 @@ const benefits = [
       </p>
     </header>
 
-    <!-- Servicios -->
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-24">
       {services.map((s) => (
         <div class="relative group">
-          <div class="absolute -inset-px rounded-3xl bg-linear-to-b from-white/10 to-transparent opacity-0 transition group-hover:opacity-100"></div>
+          <div class="absolute -inset-px rounded-3xl bg-linear-to-b from-white/10 to-transparent opacity-0 transition group-hover:opacity-100" />
 
-          <article class="relative flex h-full flex-col rounded-3xl bg-slate-900/70 backdrop-blur-xl p-10 ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:ring-cyan-400/40">
-            
-            <div class={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br ${s.color} text-white shadow-lg`}>
+          <article
+            class="relative flex h-full flex-col rounded-3xl bg-slate-900/70 backdrop-blur-xl p-10 ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:ring-cyan-400/40"
+          >
+            <div
+              class={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br ${s.color} text-white shadow-lg`}
+            >
               <Icon name={s.icon} class="size-8" />
             </div>
 
-            <h3 class="text-xl font-semibold text-white transition-colors group-hover:text-cyan-400">
+            <h3 class="text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
               {s.title}
             </h3>
-            
+
             <p class="mt-4 flex-auto text-base leading-7 text-slate-400">
               {s.desc}
             </p>
 
             <div class="mt-8 flex items-center text-sm font-semibold text-cyan-400">
               Saber más
-              <Icon name="lucide:arrow-right" class="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+              <Icon
+                name="lucide:arrow-right"
+                class="ml-2 size-4 transition-transform group-hover:translate-x-1"
+              />
             </div>
           </article>
         </div>
       ))}
     </div>
 
-    <!-- Beneficios -->
-    <div class="mt-20 rounded-[3rem] bg-linear-to-br from-slate-900 to-slate-950 p-10 md:p-16 ring-1 ring-white/10 relative overflow-hidden">
-      <div class="absolute -top-24 -right-24 h-72 w-72 bg-cyan-400/10 blur-[120px]"></div>
+    <div class="relative rounded-[3rem] bg-linear-to-br from-slate-900 to-slate-950 p-10 md:p-16 ring-1 ring-white/10 overflow-hidden">
+  <div class="absolute -top-24 -right-24 h-72 w-72 bg-cyan-400/10 blur-[120px]" />
 
-      <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-14">
-        <div class="max-w-md text-center lg:text-left">
-          <h3 class="text-3xl font-bold text-white">
-            ¿Por qué confiar en nosotros?
-          </h3>
-          <p class="mt-4 text-slate-400">
-            Convertimos complejidad técnica en soluciones claras, escalables y seguras.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {benefits.map((b) => (
-            <div class="flex flex-col items-center lg:items-start gap-3 p-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-cyan-400 ring-1 ring-white/10">
-                <Icon name={b.icon} class="size-5" />
-              </div>
-              <p class="text-sm font-medium text-white text-center lg:text-left">
-                {b.text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+  <div class="relative z-10 grid gap-12 lg:grid-cols-2 items-center">
+    <div>
+      <h3 class="text-3xl font-bold text-white">
+        ¿Por qué elegirme?
+      </h3>
+      <p class="mt-4 text-yellow-200 leading-relaxed">
+        Ingeniero de Sistemas, especializado en la desarrollo de software en empresas consultoras y la industria minera. Aporto con soluciones tecnologicas a la mejora de procesos industriales y automatizacion.
+      </p>
     </div>
 
+    <div class="grid gap-6 sm:grid-cols-3">
+      {benefits.map((b) => (
+        <div class="flex flex-col items-center lg:items-start gap-3 p-4 transition-transform duration-300 hover:scale-105">
+          <div class={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 ${b.color} ring-1 ring-white/20 shadow-inner`}>
+            <Icon name={b.icon} class="size-6" />
+          </div>
+          <p class="text-sm font-medium text-slate-200 text-center lg:text-left leading-snug">
+            {b.text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
   </div>
 </section>

@@ -1,11 +1,10 @@
 ---
 import "../styles/global.css";
+
 const links = [
   { name: "Inicio", href: "/" },
-  { name: "Servicios", href: "/servicios" },
-  { name: "Nosotros", href: "/nosotros" },
-  { name: "Proyectos", href: "/proyectos" },
-  { name: "Contacto", href: "/contacto" },
+  { name: "Servicios", href: "#our-services" },
+  { name: "Contacto", href: "#contacto" },
 ];
 ---
 
@@ -13,17 +12,14 @@ const links = [
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
     <!-- Logo -->
-    <a
-      href="/"
-      class="text-2xl font-extrabold tracking-tight text-white"
-    >
-      BSM
+    <a href="/" class="text-2xl font-extrabold tracking-tight text-white">
+      Dai
       <span class="bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-        TechSolutions
+        Dev
       </span>
     </a>
 
-    <!-- Links -->
+    <!-- Links desktop -->
     <ul class="hidden items-center gap-8 md:flex">
       {links.map((link) => (
         <li>
@@ -38,15 +34,43 @@ const links = [
       ))}
     </ul>
 
-    <!-- CTA -->
-    <div class="flex items-center gap-4">
-      <a
-        href="/contacto"
-        class="hidden rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:shadow-cyan-500/40 active:scale-95 md:inline-block"
-      >
-        Ingresar
-      </a>
-    </div>
+    <!-- Botón hamburguesa (mobile) -->
+    <button
+      id="menu-btn"
+      class="md:hidden flex flex-col gap-1.5"
+      aria-label="Abrir menú"
+    >
+      <span class="h-0.5 w-6 bg-white"></span>
+      <span class="h-0.5 w-6 bg-white"></span>
+      <span class="h-0.5 w-6 bg-white"></span>
+    </button>
+  </div>
 
+  <!-- Menú mobile -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-white/10 bg-slate-950/95 backdrop-blur"
+  >
+    <ul class="flex flex-col gap-4 px-6 py-6">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block text-base font-medium text-slate-300 transition hover:text-white"
+          >
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
   </div>
 </nav>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

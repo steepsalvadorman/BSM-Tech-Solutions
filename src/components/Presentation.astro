@@ -1,27 +1,39 @@
 ---
 import "../styles/global.css";
-import presentacion from "../assets/propiedad-intelectual-software.jpg";
+import presentacion0 from "../assets/img0.jpg";
+import presentacion1 from "../assets/img1.jpg";
+import presentacion2 from "../assets/img2.jpg";
+
+const images = [
+  presentacion0,
+  presentacion1,
+  presentacion2,
+];
 
 const textos = [
   { title: "Soluciones Innovadoras en Desarrollo de Software" },
-  { txtSubtitle: "Transformamos tus ideas en aplicaciones digitales a medida" },
-  { txtBoton: "HABLEMOS", href: "/hablemos" },
+  { txtSubtitle: "Transformo tus ideas en aplicaciones digitales a medida" },
+  { txtBoton: "HABLEMOS", href: "#contacto" },
 ];
 ---
 
 <section class="relative min-h-[45vh] overflow-hidden bg-black">
-  <!-- Imagen de fondo -->
-  <img
-    src={presentacion.src}
-    alt="Presentación de la empresa"
-    class="absolute inset-0 h-full w-full object-cover"
-    loading="eager"
-  />
+  <!-- Carrusel -->
+  <div class="absolute inset-0">
+    {images.map((img, index) => (
+      <img
+        src={img.src}
+        alt={`Slide ${index + 1}`}
+        class="carousel-img absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-1000"
+        loading={index === 0 ? "eager" : "lazy"}
+      />
+    ))}
+  </div>
 
-  <!-- Overlay oscuro con degradado -->
+  <!-- Overlay -->
   <div class="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-900/80 to-black/70"></div>
 
-  <!-- Glow sutil -->
+  <!-- Glow -->
   <div class="absolute inset-0">
     <div class="absolute top-1/2 left-1/2 h-128 w-lg -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[140px]"></div>
   </div>
@@ -43,4 +55,18 @@ const textos = [
       {textos[2].txtBoton}
     </a>
   </div>
+
+  <!-- Script del carrusel -->
+  <script is:inline>
+    const slides = document.querySelectorAll(".carousel-img");
+    let current = 0;
+
+    slides[current].classList.add("opacity-100");
+
+    setInterval(() => {
+      slides[current].classList.remove("opacity-100");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("opacity-100");
+    }, 5000);
+  </script>
 </section>
